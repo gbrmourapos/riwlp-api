@@ -5,6 +5,7 @@ interface ContactAttributes {
   id: number;
   name: string;
   email: string;
+  message: string;
 }
 
 interface ContactInput extends Optional<ContactAttributes, "id"> {}
@@ -17,6 +18,7 @@ class Contact
   public id!: number;
   public name!: string;
   public email!: string;
+  public message!: string;
 }
 
 Contact.init(
@@ -31,6 +33,10 @@ Contact.init(
       allowNull: false,
     },
     email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    message: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -8,7 +8,8 @@ const createContact = async (req: Request, res: Response) => {
     const contactRequest: ContactRequestDTO = req.body;
     const contact = await create({
       name: contactRequest.name,
-      email: contactRequest.email
+      email: contactRequest.email,
+      message: contactRequest.message
     });
 
     const contactResponse = {
